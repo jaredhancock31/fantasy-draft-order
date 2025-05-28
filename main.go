@@ -1,6 +1,6 @@
 package main
 
-// "fmt"
+import "github.com/jaredhancock31/fantasy-draft-order/rand"
 
 func main() {
 
@@ -28,5 +28,5 @@ func main() {
 		"Shareeq",
 		"Zec",
 	}
-	assignOlympianToFolk(olympians, fantasyFolk)
+	rand.AssignOlympianToFolk(olympians, fantasyFolk)
 }

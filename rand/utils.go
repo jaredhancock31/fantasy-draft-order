@@ -1,4 +1,4 @@
-package main
+package rand
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 )
 
 // randomly assign an olympian to one of the fantasyFolk
-func assignOlympianToFolk(olympians []string, fantasyFolk []string) {
+func AssignOlympianToFolk(olympians []string, fantasyFolk []string) {
 	randOlympianIndexes := randRangeSlice(0, len(olympians))
 	fmt.Printf("Randomized olympian indexes: %v\n", randOlympianIndexes)
 	randFantasyIndexes := randRangeSlice(0, len(fantasyFolk))
