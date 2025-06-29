@@ -1,15 +1,16 @@
-package rand
+package y2024
 
 import (
 	"fmt"
-	"math/rand/v2"
+
+	"github.com/jaredhancock31/fantasy-draft-order/utils"
 )
 
 // randomly assign an olympian to one of the fantasyFolk
 func AssignOlympianToFolk(olympians []string, fantasyFolk []string) {
-	randOlympianIndexes := randRangeSlice(0, len(olympians))
+	randOlympianIndexes := utils.RandRangeSlice(0, len(olympians))
 	fmt.Printf("Randomized olympian indexes: %v\n", randOlympianIndexes)
-	randFantasyIndexes := randRangeSlice(0, len(fantasyFolk))
+	randFantasyIndexes := utils.RandRangeSlice(0, len(fantasyFolk))
 	fmt.Printf("Randomized ppl indexes:      %v\n", randFantasyIndexes)
 	defer println("\n...all done, bye.")
 
@@ -20,14 +21,18 @@ func AssignOlympianToFolk(olympians []string, fantasyFolk []string) {
 	}
 }
 
-func randRangeSlice(min, max int) []int {
-	randSlice := make([]int, max-min)
-	for i := min; i < max; i++ {
-		randSlice[i] = i
+func Randomize(players []string) {
+	olympians := []string{
+		"Belgium",
+		"France",
+		"Germany",
+		"Great Britain",
+		"Ireland",
+		"Israel",
+		"Mexico",
+		"Netherlands",
+		"Sweden",
+		"United States",
 	}
-	// shuffle shuffle shuffle
-	rand.Shuffle(len(randSlice), func(i, j int) {
-		randSlice[i], randSlice[j] = randSlice[j], randSlice[i]
-	})
-	return randSlice
+	AssignOlympianToFolk(olympians, players)
 }
